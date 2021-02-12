@@ -1,0 +1,37 @@
+1. Given the above high level requirements, what are some of the questions you would ask each of following team members to understand this feature better?
+
+Questions to PO:
+- How the system should work if the license is expired and administrator add the user?
+- How the system should work if administrator removed user's profile, when the user is online and still works works by his account? What response should we return to the user
+- How the system should work if administrator updated user's details (e.g. address) when the user is online and still works works by his account? Should we notify the user about this action? When the updates will be visible for the user (after re-login or page refresh)?
+- Can the user update it's own account? Can the user deactivate it's own account?
+- How the system should work if the license is not expired and administrator deleted the user?
+- How we will notify the user about add/update/remove profile? Will we send email notification?
+- How the user will confirm add profile?
+- Will we have expiry date for new profile confirmation? What the user will see if he open expire confirmation link?
+
+Questions to UX Designer:
+- Do we have design for each flow?
+- What text we would need in each flow (validation messages, confirmation messages, etc)?
+- Do we have a prototype of user's behaviour (e.g. diagram of element's connections) 
+- Do we have job story?
+- How the permissions hierarchy will be look like?
+- Do we have wireframe and user flow?
+
+Questions to Technical Architect: 
+- We should ask Technical Architect to provide us api interface: input parameters, output parameters, exceptions, code response
+- How we can make sure that user has available license?
+- How we can understand that user added correctly?
+- What we send to the user in email confirmation when we add him? 
+- Which areas of application will be affected when we add/edit/remove user?
+- Do we removed the user permanently or deactivate the account when administrator removes user?
+- Can administrator remove his account?
+
+2.In order to delight the user with these features, how would you want it to work?
+PO with UX Designer should create high level requirements for grooming meeting. Technical Architect after architect's meeting and meeting with PO should create sample for grooming meeting. On grooming meeting all team should clarify everything more deeply. After grooming meeting PO should create dependency diagram with user stories. User stories divide between teams. Then on planning meeting team review user stories and after detailed clarification will create tasks or update requirements.
+
+
+3. Based on your response to the previous question what would you automate in the testing of this feature?
+First of all we should start with TDD, so unit tests should be added before feature.
+Then, I would start from api interface testing.
+Then, I would create api smoke test. Then, I would create UI smoke test. Then, I would cover with api functional tests, and then UI functional tests.
